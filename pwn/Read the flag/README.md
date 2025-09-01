@@ -1,5 +1,5 @@
 # Writeup 1
-
+```
 from pwn import *
 
 p = remote("tcp.sasc.tf", 2200)
@@ -25,3 +25,4 @@ p.recv()
 p.sendline(hex(flag)) # leak flag
 
 p.interactive()
+```
