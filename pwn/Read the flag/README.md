@@ -1,4 +1,8 @@
 # Writeup 1
+
+https://t.me/writeup_ctf/771
+
+# Writeup 2
 ```
 from pwn import *
 
