@@ -15,3 +15,8 @@ HashCrack - this stage calculated a hash of you flag (the hash was MurMur3 (x64 
 VM - here a virtual machine was implemented. It had 16 opcodes - arithmetical operations, push, pop, mov, lea and jumps. Here you had to reverse the VM implementation, implement a disassembler and reverse the program. The program did various checks over flag symbols. In this stage, the VM could misbehave, but this was intended (we do a little trolling, you know);
 
 Final - just a PE playing GIF. The last flag part is on the GIF.
+
+Combining the parts in their order you result with the flag on you hands
+
+There was an intended shortcut - you can deduce the stage key based from the encrypted PE header - there is a string This program cannot run in DOS mode in PEs - that would be enough to calculate the key. Knowing the key, you can acquire each stage but this will give you only the last part of the flag, you still have to revese engineer 4 previous stages
+The challenge can be solved without any debugging - but this is a bit harder and not so interesting as soon as you will not meet the famous Ice Trickster
