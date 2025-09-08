@@ -4,7 +4,16 @@ Author's solution to Bombastic challenge
 
 As obvious from the description, check dockerhub for a container named bombastic
 
-The container itself has a python module which is protected by pyarmor. Going straight with it might be harder and more time consuming, so it's better to check other datasources firstCheck OCI using oras discover docker.io/kaspctf/bombastic:latestFrom there you can find application/vnd.sbom+json with the digest sha256:cc42156be710c5d25a13772fea31e48ef41b34ea88893e31cc22df77939fed12oras pull docker.io/kaspctf/bombastic@sha256:cc42156be710c5d25a13772fea31e48ef41b34ea88893e31cc22df77939fed12 -o out-dirRead sbom.jsom where you can find
+The container itself has a python module which is protected by pyarmor. Going straight with it might be harder and more time consuming, so it's better to check other datasources first
+Check OCI using 
+```
+oras discover docker.io/kaspctf/bombastic:latest
+```
+From there you can find application/vnd.sbom+json with the digest sha256:cc42156be710c5d25a13772fea31e48ef41b34ea88893e31cc22df77939fed12
+```
+oras pull docker.io/kaspctf/bombastic@sha256:cc42156be710c5d25a13772fea31e48ef41b34ea88893e31cc22df77939fed12 -o out-dirRead sbom.jsom
+```
+where you can find
 ```
 {
       "bom-ref": "requirements-L117",
