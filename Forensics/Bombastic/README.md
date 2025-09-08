@@ -2,7 +2,7 @@
 
 Author's solution to Bombastic challenge
 
-    As obvious from the description, check dockerhub for a container named bombastic
+As obvious from the description, check dockerhub for a container named bombastic
 
 The container itself has a python module which is protected by pyarmor. Going straight with it might be harder and more time consuming, so it's better to check other datasources firstCheck OCI using oras discover docker.io/kaspctf/bombastic:latestFrom there you can find application/vnd.sbom+json with the digest sha256:cc42156be710c5d25a13772fea31e48ef41b34ea88893e31cc22df77939fed12oras pull docker.io/kaspctf/bombastic@sha256:cc42156be710c5d25a13772fea31e48ef41b34ea88893e31cc22df77939fed12 -o out-dirRead sbom.jsom where you can find
 ```
@@ -33,10 +33,13 @@ The container itself has a python module which is protected by pyarmor. Going st
     },
 ```
 
-    The malicious package is already removed from the pypi, but using the hash you can check if it's been uploaded to virustotal (which happens automatically for all packages)
+The malicious package is already removed from the pypi, but using the hash you can check if it's been uploaded to virustotal (which happens automatically for all packages)
 
  
 
-    It is indeed uploaded to VT, which has scanned the code and has the backdoor details in the code insights
-    <img width="1275" height="219" alt="image" src="https://github.com/user-attachments/assets/4270713e-edfe-4097-967f-6d89b99193d6" />
+It is indeed uploaded to VT, which has scanned the code and has the backdoor details in the code insights
+<img width="1275" height="219" alt="image" src="https://github.com/user-attachments/assets/4270713e-edfe-4097-967f-6d89b99193d6" />
 
+# Writeup 2
+
+you could using https://pyinstxtractor-web.netlify.app/ to got unpack files and you will see main.pyc using pymaror you could using https://github.com/Lil-House/Pyarmor-Static-Unpack-1shot to got source code of it (but you only needs pyarmor_runtime.so) then you will found this code
